@@ -10,9 +10,11 @@ public class executeOpdracht {
     private static String accesCode = "2002";
 
         public static void main(String[] args) {
-        //de method doen wordt uit Opdracht_1 gecalled
-        Opdracht_1.doen();
         
+        //de method doen wordt uit Opdracht_1 gecalled
+        Opdracht_1.poging();
+        
+        //if else statement om te zien of je input goed was
         if (args[0].equals(accesCode)) {
             System.out.println(Opdracht_1.getGetal()); 
         } else  {

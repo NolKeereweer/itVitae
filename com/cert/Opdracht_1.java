@@ -11,6 +11,7 @@ package com.cert;
 
 public class Opdracht_1 {
 
+    //variabelen declareren
     private static int priveGetal = 2;
     
     public static int getGetal() {
@@ -22,8 +23,8 @@ public class Opdracht_1 {
     }
 
 
-    //practice method aangemaakt om ergens anders te importeren en callen
-    public static void doen(){
+    //practice method aangemaakt om ergens anders te importeren
+    public static void poging(){
         String gedaan = "Poging tot halen prive getal";
         System.out.println(gedaan);
     }
