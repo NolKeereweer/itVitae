@@ -1,7 +1,11 @@
 // Dit is een simpele test
 
+//importeer Opdracht_1
+import com.cert.Opdracht_1;
+
 public class test {
     public static void main(String[] args) {
-        System.out.println("Dit is een kleine test");
+        //de method doen wordt uit Opdracht_1 gecalled
+        Opdracht_1.doen();
     }
 }
