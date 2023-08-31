@@ -4,7 +4,7 @@
  * 
  *  Main space voor opdrachten eerste week ITVitae. 
  *  
- *  Huidig: Method om ergens anders te callen
+ *  Huidig: packages/methods/variables gebruiken binnen en buiten classes en andere .java files
  */
 
 package com.cert;
