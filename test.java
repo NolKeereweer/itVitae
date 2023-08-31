@@ -1,6 +1,8 @@
-// Dit is een simpele test
-
-//importeer Opdracht_1
+/* 
+* Naam: Nol Keereweer
+* Test ruimte voor Opdracht_1
+* Importeren van Opdracht_1 en methodes vanuit daar gebruiken
+*/
 import com.cert.Opdracht_1;
 
 public class test {
