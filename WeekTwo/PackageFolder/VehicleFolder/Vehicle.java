@@ -8,8 +8,16 @@ public abstract class Vehicle {
         weight = wgh;
     }
 
+    public String getWeight() {
+        return Integer.toString(weight);
+    }
+
     public void setColour(String clr) {
         colour = clr;
+    }
+
+    public String getColour() {
+        return colour;
     }
 
 }
