@@ -8,6 +8,8 @@ public class ExerciseLastDigit {
         
         int numberOne = input.nextInt(); 
         int numberTwo = input.nextInt();
+
+        input.close();
         
         boolean sameOrNot;
         
