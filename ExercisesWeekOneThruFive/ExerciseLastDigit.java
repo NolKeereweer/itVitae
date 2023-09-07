@@ -1,10 +1,10 @@
 import java.util.Scanner;
 
-public class ExerciseNine { 
+public class ExerciseLastDigit { 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         
-        System.out.println("give 2 seperate values, we shall see if the last digits are teh same");
+        System.out.println("give 2 seperate values, we shall see if the last digits are the same");
         
         int numberOne = input.nextInt(); 
         int numberTwo = input.nextInt();

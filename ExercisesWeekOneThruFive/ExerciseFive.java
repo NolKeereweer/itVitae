@@ -11,7 +11,7 @@ public class ExerciseFive {
 
         String noun = input.nextLine(); // nextLine reads whole line to create noun(the namer)
         String[] words = noun.split(" "); // splits noun into seperate words
-        String a = words[words.length - 1]; // grabs words, length -1 removes 1 word
+        String a = words[words.length - 1]; // grabs words, length -1 = sum words -1
 
         System.out.println("How would you describe it? Big? Azure? Tattered?");
 
