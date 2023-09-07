@@ -1,16 +1,19 @@
-import java.math.*;
 import java.util.Scanner;
 
 public class Thursday {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         
-        System.out.println("insert year count:");
+        System.out.println("What temperature is it currently?");
 
-        long years = input.nextInt();
+        double temperatureFahrenheit = input.nextDouble();
+
+        System.out.println(temperatureFahrenheit + "? Oh sorry I don't speak cheeseburger per football field...");
         
-        System.out.println(Long.toUnsignedString(years * 60L * 365L * 24L));
         input.close();
-    }
-    
+        
+        double temperatureCelsius = (temperatureFahrenheit - 32) / 1.8;
+
+        System.out.println("It is currently: " + temperatureCelsius + " degrees Centigrade.");       
+    }    
 }
