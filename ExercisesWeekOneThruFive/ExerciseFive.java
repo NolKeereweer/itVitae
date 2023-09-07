@@ -8,7 +8,6 @@ public class ExerciseFive {
 
         System.out.println("What kind of thing are we talking about?");
 
-
         String noun = input.nextLine(); // nextLine reads whole line to create noun(the namer)
         String[] words = noun.split(" "); // splits noun into seperate words
         String a = words[words.length - 1]; // grabs words, length -1 = sum words -1
@@ -16,6 +15,7 @@ public class ExerciseFive {
         System.out.println("How would you describe it? Big? Azure? Tattered?");
 
         String b = input.next(); // declare string b is a user input as well
+        input.close();
 
         String c = " Of Doom"; // declaring the 2 hardcoded strings to complete the story
         String d = "3000";
