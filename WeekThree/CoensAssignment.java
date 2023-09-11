@@ -17,17 +17,17 @@ public class CoensAssignment {
         int c = a ^ b;
 
         String binString = Integer.toBinaryString(c); 
-        ArrayList<String> lijst = new ArrayList<>(Arrays.asList(binString));
-        Collections.shuffle(lijst);
-        String shuffledList = String.join("", lijst);
+        ArrayList<String> list = new ArrayList<>(Arrays.asList(binString.split("")));
+        Collections.shuffle(list);
+        String shuffledList = String.join("", list);
 
         int endNumber = Integer.parseInt(shuffledList, 2);
-
+        
         boolean zelfde = (endNumber ^ b) == (endNumber ^ a);
 
         int aNew = endNumber ^ a;
         int bNew = endNumber ^ b;
 
-        System.out.println("Result: " + zelfde + "\nYour data: " + aNew + " " + bNew);
+        System.out.println("Result: " + zelfde + "\nYour data: "+ endNumber + " " + aNew + " " + bNew);
     }
 }
