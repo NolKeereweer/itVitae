@@ -3,7 +3,6 @@ import java.util.Scanner;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.ArrayList;
-import java.util.List;
 
 public class CoensAssignment {
     public static void main(String[] args) {
@@ -30,6 +29,5 @@ public class CoensAssignment {
         int bNew = endNumber ^ b;
 
         System.out.println("Result: " + zelfde + "\nYour data: " + aNew + " " + bNew);
-
     }
 }
