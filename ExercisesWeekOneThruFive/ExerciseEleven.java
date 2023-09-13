@@ -2,6 +2,11 @@ import java.util.Scanner;
 import java.awt.Toolkit;
 
 class ExerciseEleven {
+    
+    private static final String ANSI_RESET = "\u001B[0m";    
+    private static final String ANSI_RED = "\u001B[31m";
+    private static final String ANSI_GREEN = "\u001B[32m"; // different used text colors
+    
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         
@@ -32,9 +37,5 @@ class ExerciseEleven {
         System.out.println(ANSI_RESET); // reset text color
         
         Toolkit.getDefaultToolkit().beep(); // make a sound
-    }
-    
-    public static final String ANSI_RESET = "\u001B[0m";    
-    public static final String ANSI_RED = "\u001B[31m";
-    public static final String ANSI_GREEN = "\u001B[32m"; // different used text colors
+    }    
 }
