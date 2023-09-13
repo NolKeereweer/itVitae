@@ -23,11 +23,11 @@ public class CoensAssignment {
 
         int endNumber = Integer.parseInt(shuffledList, 2);
         
-        boolean zelfde = (endNumber ^ b) == (endNumber ^ a);
+        boolean same = (endNumber ^ b) == (endNumber ^ a);
 
         int aNew = endNumber ^ a;
         int bNew = endNumber ^ b;
 
-        System.out.println("Result: " + zelfde + "\nYour data: "+ endNumber + " " + aNew + " " + bNew);
+        System.out.println("Result: " + same + "\nYour data: "+ endNumber + " " + aNew + " " + bNew);
     }
 }

@@ -17,7 +17,5 @@ public class ExerciseEight {
         double area = base * height / 2; // this is the calculator
         
         System.out.println(base + " multiplied by " + height + " divided by 2 is: " + area);
-        
-        input.close(); // close the scanner 
     }
 }
