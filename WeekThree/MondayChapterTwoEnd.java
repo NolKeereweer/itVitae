@@ -1,4 +1,3 @@
-package WeekThree;
 import java.util.Scanner;
 
 public class MondayChapterTwoEnd {

@@ -24,8 +24,7 @@ class ExerciseEleven {
         int rowHigh = row - 1;
         int rowLow = row + 1;
         int columnLeft = column - 1;
-        int columnRight = column + 1; // created all used coordinates
-        
+        int columnRight = column + 1; // created all used coordinates        
         
         System.out.println("Barrier carriers deployed at:\n" + rowHigh + ", " + column);
         System.out.println(row + ", " + columnRight);
