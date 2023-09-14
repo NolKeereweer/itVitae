@@ -2,9 +2,7 @@ import java.util.Scanner;
 import java.util.ArrayList;
 
 public class SleepIn { 
-    public static void main(String[] args) {
-        boolean sleepIn;
-        
+    public static void main(String[] args) {        
         Scanner input = new Scanner(System.in);
         System.out.println("What day is it?");
         String whatDay = input.next();
@@ -17,7 +15,7 @@ public class SleepIn {
             vacationStatus = true;
         } else {
             vacationStatus = false;
-        }
+        } System.out.println(vacationStatus); // Diagnostic check
         
         ArrayList<String> workDays = new ArrayList<>(); // Creat a list with possible days to work/go to school on
         workDays.add("Monday");
@@ -32,21 +30,21 @@ public class SleepIn {
             weekDay = true;
         } else {
             weekDay = false;
-        }
+        } System.out.println(weekDay); // Diagnostic check
         
-        if (weekDay == false && vacationStatus == false) { // Check if it either vacation and/or a workday
-            sleepIn = false;
-        } else if (weekDay == true && vacationStatus == true) {
+        boolean sleepIn;
+        
+        if (vacationStatus == true) { // Check if it either vacation and/or a workday
             sleepIn = true;
-        } else if (weekDay == true && vacationStatus == false) {
-            sleepIn = false;
+        } else if (weekDay == false) {
+            sleepIn = true;
         } else {
-            sleepIn = true;
-        }
+            sleepIn = false;
+        } System.out.println(sleepIn); // Diagnostic check
         
         if (sleepIn == true) { // Check if you can sleep in
             System.out.println("Let's sleep in a little longer");
-        } else {
+        } else if (sleepIn == false) {
             System.out.println("Wake up! You're gonna be late.");
         }
     }
