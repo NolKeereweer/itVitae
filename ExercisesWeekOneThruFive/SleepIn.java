@@ -3,8 +3,8 @@ public class SleepIn {
         System.out.println(sleepIn(false, false));
     }
     
-    public static boolean sleepIn(boolean weekday, boolean vacation) {
-        if (weekday == false || vacation == true) {
+    public static boolean sleepIn(boolean weekDay, boolean vacation) {
+        if (!weekDay || vacation) {
             return true;
         }
         return false;
