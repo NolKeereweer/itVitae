@@ -11,7 +11,8 @@ class Hangman {
   
   public static void main(String[] args) {
     String actualWord; 
-    Scanner input = new Scanner(System.in); 
+    Scanner input = new Scanner(System.in);
+    char guess;
     int guessedCorrect = 0;
     int guessedWrong = 0;
     boolean guessedLetter = false;
@@ -30,12 +31,12 @@ class Hangman {
     
     for (int j = 0; j < 15; j++) { // giant for loop for the guesses
       System.out.println("Guess a letter. ");
-      char guess = input.next().charAt(0); // guessed character (via input)
+      guess = input.next().charAt(0); // guessed character (via input)
       
       for (int i = 0; i < actualWord.length(); i++) { // loops through THE word
         if (actualWord.charAt(i) == guess) {
           guessedLetter = true;
-            if (shownWord.get(i) == '_') {
+            if (shownWord.get(i) == '_') { 
               shownWord.set(i, guess);
             } else {
               break;
