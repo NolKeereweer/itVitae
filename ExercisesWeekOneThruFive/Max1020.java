@@ -22,12 +22,6 @@ public class Max1020 {
   } // method to determine which number is higher, and which number will be returned
 
   private static boolean isViable(int checkedNumber) {
-    boolean viableNumber;
-    if (checkedNumber >= 10 && checkedNumber <= 20) {
-      viableNumber = true;
-    } else {
-      viableNumber = false;
-    }
-    return viableNumber;
+    return checkedNumber >= 10 && checkedNumber <= 20;
   } // boolean method to check if the number is within the given range
 }
