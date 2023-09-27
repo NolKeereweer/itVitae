@@ -5,18 +5,15 @@ public class Diff21 {
         Scanner in = new Scanner(System.in);
         System.out.print("Enter a number: ");
         int n = in.nextInt();
-        System.out.println(diff21(n));
+        System.out.println("Difference is = " + diff21(n));
     }    
     private static int diff21 (int n) {
-        int diff;
+        int diffCalculator = 21 - n;
         if (n <= 21) {
-            diff = Math.abs(21 - n);
-            System.out.print("Difference = ");
-            return diff;
-        } else {
-            diff = Math.abs((21 - n) * 2);
-            System.out.print("Difference = ");
-            return diff;
+          return diffCalculator;
+        } 
+        else {
+          return Math.abs(diffCalculator * 2);
         }
     }
 }

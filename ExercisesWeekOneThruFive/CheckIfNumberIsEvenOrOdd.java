@@ -7,9 +7,9 @@ public class CheckIfNumberIsEvenOrOdd {
         int inputNumber = input.nextInt(); // declare the input integer
         
         if (inputNumber % 2 == 0) { // if statement to check whether the input integer is even or odd
-            System.out.println("1"); // outcome if it's even/'true'
+            System.out.println(1); // outcome if it's even/'true'
         } else {
-            System.out.println("0"); // outcome if it's odd/'false'
+            System.out.println(0); // outcome if it's odd/'false'
         }
     }
 }
