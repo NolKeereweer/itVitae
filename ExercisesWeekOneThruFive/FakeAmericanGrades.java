@@ -7,39 +7,82 @@ class FakeAmericanGrades {
     25 and up = E
     default = F */
     
-    int percentage = 0;
     char grade = ' ';
-    
-    Switch (percentage) {
-      case 80: 
+    int percentage = 9;
+
+    if (percentage > 80) {
+      grade = 'A';
+      System.out.println("You got an " + grade);
+    } else if (percentage > 60 && percentage < 81) {
+        grade = 'B';
+        System.out.println("You got a " + grade);
+    } else if (percentage > 50 && percentage < 61) {
+        grade = 'C';
+        System.out.println("You got a " + grade);
+    } else if (percentage > 45 && percentage < 51) {
+        grade = 'D';
+        System.out.println("You got a " + grade);
+    } else if (percentage > 25 && percentage < 46) {
+        grade = 'E';
+        System.out.println("You got an " + grade);
+    } else {
+        grade = 'F';
+        System.out.println("You got an " + grade);
+    }
+
+
+
+    /*char grade = ' ';
+    final int percentage = 0;    
+    switch (percentage) {
+      case 100:
+
+      // and so on
+
+      case 86:
+      case 85:
+      case 84:
+      case 83:
+      case 82:
+      case 81: 
         grade = 'A';
         System.out.println("You got an " + grade);
         break;
         
-      case 60 :
+      	// and so on
+
+      case 63:
+      case 62:
+      case 61 :
         grade = 'B';
         System.out.println("You got a " + grade);
         break;
         
-      case > 50 && < 61 :
+        // fall through
+
+      case 50 :
         grade = 'C';
         System.out.println("You got a " + grade);
-        break;
-        
-      case > 45 && < 51 :
+        break;        
+      
+        // fall through
+
+      case 45 :
         grade = 'D';
         System.out.println("You got a " + grade);
-        break;
+        break; 
         
-      case > 25 && < 46 :
+        // fall through
+
+      case 25:
         grade = 'E';
         System.out.println("You got an " + grade);
         break;
-      
-      default :
+
+      default:
         grade = 'F';
         System.out.println("You got an " + grade);
         break;
-    }
+    }*/
   }
 }
