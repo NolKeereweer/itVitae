@@ -1,9 +1,6 @@
-public class Penguin extends bird {
+public class Penguin extends Bird {
   public Penguin() {
-    setWings(2);
-    setWeight(1220);
-    setColour("Black and white");
-    setFlyStatus(false);
+    super(2, 1220, "Black and white", false);
   }
 
   @Override

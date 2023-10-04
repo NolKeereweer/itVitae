@@ -1,23 +1,14 @@
-public abstract class bird {
-  int wings;
-  int weight; // in grams
-  String colour;
-  boolean canFly;
+public abstract class Bird {
+  private int wings = 0;
+  private int weight = 0; // in grams
+  private String color = null;
+  private boolean canFly = false;
   
-  public void setWings(int newWings) {
-    this.weight = newWings;
-  }
-
-  public void setWeight(int newWeight) {
-    this.weight = newWeight;
-  }
-
-  public void setColour(String newColour) {
-    this.colour = newColour;
-  }
-
-  public void setFlyStatus(boolean newCanFly) {
-    this.canFly = newCanFly;
+  protected Bird(int wings, int weight, String color, boolean canFly) {
+    this.wings = wings;
+    this.weight = weight;
+    this.color = color;
+    this.canFly = canFly;
   }
 
   public void birdPrinter() {

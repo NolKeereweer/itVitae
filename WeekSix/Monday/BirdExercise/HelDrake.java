@@ -1,9 +1,6 @@
-public class HelDrake extends bird {
+public class HelDrake extends Bird {
   public HelDrake() {
-    setWings(6);
-    setWeight(1000000);
-    setColour("Bronze and black");
-    setFlyStatus(true);
+    super(6, 1_000_000, "Bronze and Black", true);
   }
 
   @Override

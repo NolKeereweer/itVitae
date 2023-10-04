@@ -1,8 +1,5 @@
-public class Potoo extends bird{
+public class Potoo extends Bird{
   public Potoo() {
-    setWings(2);
-    setWeight(220);
-    setColour("Dark grey");
-    setFlyStatus(true);
+    super(2, 220, "Dark grey", true);
   }
 }
