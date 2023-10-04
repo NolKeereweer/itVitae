@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="618e37d3-3f4f-4a79-8f50-768bc26e1edc" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Execute.java" beforeDir="false" afterPath="$PROJECT_DIR$/Execute.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Package.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExercisesWeekOneThruFive/BuyingInventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ExercisesWeekOneThruFive/BuyingInventory.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,7 +23,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/nolke/Desktop/itvitae/itVitae/WeekTwo",
+    "last_opened_file_path": "C:/Users/nolke/Desktop/itvitae/itVitae",
     "settings.editor.selected.configurable": "reference.settings.ide.settings.notifications"
   }
 }]]></component>
