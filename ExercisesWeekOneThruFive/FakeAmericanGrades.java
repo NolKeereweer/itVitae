@@ -1,12 +1,5 @@
 class FakeAmericanGrades {
   public static void main(String[] args) {
-    /*80 and up = A
-    60 and up = B
-    50 and up = C
-    45 and up = D
-    25 and up = E
-    default = F */
-    
     char grade = ' ';
     int percentage = 9;
 
@@ -30,7 +23,12 @@ class FakeAmericanGrades {
         System.out.println("You got an " + grade);
     }
 
-
+    /*80 and up = A
+    60 and up = B
+    50 and up = C
+    45 and up = D
+    25 and up = E
+    default = F */
 
     /*char grade = ' ';
     final int percentage = 0;    
