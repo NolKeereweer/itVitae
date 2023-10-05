@@ -4,6 +4,7 @@ import java.util.ArrayList;
 class BuyingInventory {
   
   private static final String ANSI_GREEN = "\u001B[32m"; // change text color to green
+  private static final String ANSI_RED = "\u001B[31m"; // change the text color to red
   private static final String ANSI_RESET = "\u001B[0m"; // reset text color
 
   public static void main(String[] args) {
@@ -55,14 +56,16 @@ class BuyingInventory {
       System.out.println(ANSI_GREEN + "Discount granted!" + ANSI_RESET);
     }
     
-    System.out.println("What item number do you want to see the price of? ");
-    int requestedItem = input.nextInt();
+    int requestedItem;
     
-    if (requestedItem > 7) {
-      System.out.println("That isn't part of our inventory. It's best you try again later.");
-      return;
-    }
-
+    do  {
+      System.out.println("What item number do you want to see the price of? ");
+      requestedItem = input.nextInt();
+      if (requestedItem > 7) {
+        System.out.println(ANSI_RED + "That isn't part of our inventory." + ANSI_RESET + " It's best you try again.\n" );
+      }
+    } while (requestedItem > 7);
+    
     String requestedItemName = items.get(requestedItem - 1); // String to determine which item to show
     
     double requestedItemPrice;
