@@ -11,8 +11,3 @@ class EvenSumOfDigits {
     }
   }
 }
-
-// outer loop = loop over 0 tm 4
-//     inner loop = loop over 0 tm 9
-//         val = 1 + iterator outer loop + iterator inner loop;
-//         if val % 2 == 0 print val
