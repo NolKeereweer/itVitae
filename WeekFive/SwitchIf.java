@@ -1,6 +1,6 @@
 class SwitchIf {
   public static void main(String[] args) {
-    String browser;
+    String browser = "Edge";
   
     switch (browser) {
       case "Edge":
