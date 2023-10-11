@@ -12,8 +12,8 @@ class CreateThreeDigitNumbers {
         }
       }
     }
-    TextMethods.GreenText();
+    TextMethods.greenText();
     System.out.println("\nTotal of unique numbers: " + uniqueNumbers);
-    TextMethods.ResetText();
+    TextMethods.resetText();
   }
 }

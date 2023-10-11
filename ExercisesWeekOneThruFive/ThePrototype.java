@@ -3,42 +3,42 @@ import java.util.Scanner;
 class ThePrototype extends TextMethods {
   public static void main(String[] args) {
     Scanner userInput = new Scanner(System.in);
-    GreenText();
+    TextMethods.greenText();
     System.out.print("Airship pilot, enter a distance between 0 and 100: ");
     
     int pilotInput = 0;
     boolean viableRange = false;
     
     do {
-      YellowText();
+      TextMethods.yellowText();
       pilotInput = userInput.nextInt();
-      ResetText();
+      TextMethods.resetText();
       if (pilotInput <= 100 && pilotInput >= 0) {
         viableRange = true;
       } else {
         viableRange = false;
-        RedText();
+        TextMethods.redText();
         System.out.println("Try again.");
-        ResetText();
+        TextMethods.resetText();
       }
     } while (!viableRange);
     
-    ClearScreen();
+    TextMethods.clearScreen();
     
-    GreenText();
+    TextMethods.greenText();
     System.out.println("Hunter, it's up to you now to get the range right.");
-    ResetText();
+    TextMethods.resetText();
     
     int hunterInput = 0;
     boolean rangeCorrect = false;
 
     do {
       System.out.print("\nWhat's your guess? ");
-      CyanText();
+      TextMethods.cyanText();
       hunterInput = userInput.nextInt();
-      RedText();
+      TextMethods.redText();
       if (hunterInput == pilotInput) {
-        GreenText();
+        TextMethods.greenText();
         System.out.println("Correct! That would be a direct hit.");
         rangeCorrect = true;
       } else if (hunterInput >= pilotInput) {
@@ -46,7 +46,7 @@ class ThePrototype extends TextMethods {
       } else {
         System.out.println(hunterInput + ", The airship is further than that! Try again.");
       }
-      ResetText();
+      TextMethods.resetText();
     } while (!rangeCorrect);
   }
 }

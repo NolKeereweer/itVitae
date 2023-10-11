@@ -1,37 +1,37 @@
 public class TextMethods {
-  static void ClearScreen() {
+  static void clearScreen() {
     System.out.print("\033[H\033[2J");
   }
   
-  static void ResetText() {
+  static void resetText() {
     System.out.print("\u001B[0m");
   }
   
-  static void RedText() {
+  static void redText() {
     System.out.print("\u001B[31m");
   }
   
-  static void GreenText() {
+  static void greenText() {
     System.out.print("\u001B[32m");
   }
   
-  static void YellowText() {
+  static void yellowText() {
     System.out.print("\u001B[33m");
   }
   
-  static void BlueText() {
+  static void blueText() {
     System.out.print("\u001B[34m");
   }
   
-  static void PurpleText() {
+  static void purpleText() {
     System.out.print("\u001B[35m");
   }
   
-  static void CyanText() {
+  static void cyanText() {
     System.out.print("\u001B[36m");
   }
   
-  static void WhiteText() {
+  static void whiteText() {
     System.out.print("\u001B[37m");
   }
 }
