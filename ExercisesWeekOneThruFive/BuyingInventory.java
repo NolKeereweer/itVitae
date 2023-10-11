@@ -61,10 +61,10 @@ class BuyingInventory {
     do  {
       System.out.println("What item number do you want to see the price of? ");
       requestedItem = input.nextInt();
-      if (requestedItem > 7) {
+      if (requestedItem > items.size() || requestedItem < 0) {
         System.out.println(ANSI_RED + "That isn't part of our inventory." + ANSI_RESET + " It's best you try again.\n" );
       }
-    } while (requestedItem > 7);
+    } while (requestedItem > items.size() || requestedItem <= 0);
     
     String requestedItemName = items.get(requestedItem - 1); // String to determine which item to show
     
@@ -75,6 +75,6 @@ class BuyingInventory {
       requestedItemPrice = discountedPrices.get(requestedItem - 1);
     } 
     
-    System.out.println(requestedItemName + " cost " + requestedItemPrice + " Gold");
+    System.out.println(requestedItemName + " cost " + requestedItemPrice + " Gold.");
   }
 }
