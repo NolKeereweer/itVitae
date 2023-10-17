@@ -5,19 +5,64 @@ import java.util.*;
 public class BankOpdrachtMain {
   public static Scanner input = new Scanner(System.in);
   
+  private static Client test = new Client("Henk", "9-9-1999", "Henkstraat", 9);
+  private static Client testTwo = new Client("Sjaak", "10-10-2000", "Sjaakstraat", 1);
+  
   public static void main(String[] args) {
-    
-    Client test = new Client("Henk", "9-9-1999", "Henkstraat", 9);
-    Client testTwo = new Client("Sjaak", "10-10-2000", "Sjaakstraat", 1);
-    
-    for (int i = 0; i <= 3; i++) {
+    System.out.println("Welcome to the ITVitae student bank.\nRunning admin menu now.\n");
+    AdminMenu();
+  }
+
+  private static void AdminMenu() {
+    boolean runAdminMenu = true;
+    do {
+      System.out.println("Enter admin command number (For help enter 3): ");      
+      int clientInput = input.nextInt();      
+
+      
+      switch (clientInput) {
+        case 1: 
+          System.out.println("Opening client menu for client number " + clientInput + "\n...\n...\n...");
+          ClientMenu(test);
+          break;
+        case 2:
+          System.out.println("Opening client menu for client number " + clientInput + "\n...\n...\n...");
+          ClientMenu(testTwo);
+          break;
+        case 3:
+          System.out.print("""
+          
+            Admin command list:
+          - 1 run client menu for client number 1
+          - 2 run client menu for client number 2
+          - 3 show command list
+          - 4 exit command menu
+          
+          """);
+          break;
+        case 4:
+          System.out.println("Exiting admin menu. Closing program.");
+          runAdminMenu = false;
+          break;
+        default:
+          System.out.println("Not a viable input. Try again.");
+          break;
+      }
+    } while (runAdminMenu);
+  }
+
+  public static void ClientMenu(Client current) {
+    boolean runClientMenu = true;
+    while (runClientMenu) {
       System.out.print("""
+      
         Options for this client:
       - Press 1 to show client information.
       - Press 2 to show client balance.
       - Press 3 to show client's transaction history.
       - Press 4 to enter the deposit menu.
       - Press 5 to enter the transfer menu.
+      - Press 6 to exit.
         
       """);
       
@@ -29,15 +74,15 @@ public class BankOpdrachtMain {
       do {
         switch (menuInput) {
           case 1: 
-            test.getKlantInfo(); 
+            current.getKlantInfo(); 
             break;
             
           case 2: 
-            test.rekening.getSaldo(); 
+            current.rekening.getSaldo(); 
             break;
             
           case 3: 
-            test.rekening.getTransactieHistorie();
+            current.rekening.getTransactieHistorie();
             break;
             
           case 4:
@@ -60,10 +105,10 @@ public class BankOpdrachtMain {
             
             switch (senderInput) {
               case 1:
-                test.rekening.overBoeken(test.rekening, testTwo.rekening, transferAmount);
+                current.rekening.overBoeken(current.rekening, testTwo.rekening, transferAmount);
                 break;
               case 2: 
-                test.rekening.overBoeken(testTwo.rekening, test.rekening, transferAmount);
+                current.rekening.overBoeken(testTwo.rekening, current.rekening, transferAmount);
                 break;
               default:
                 System.out.println("That order won't work.");
@@ -71,13 +116,18 @@ public class BankOpdrachtMain {
             }
             break;
             
+          case 6:
+            System.out.println("Exiting client menu.");
+            runClientMenu = false;
+            break;
+            
           default:
             TextMethodsWeekSeven.redText();
             System.out.println("Not a viable input. Try again.");
             TextMethodsWeekSeven.resetText();
-            retry = true;
+            break;
         }
       } while (retry);
-    }     
+    }
   }
 }

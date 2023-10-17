@@ -31,6 +31,6 @@ class Client implements ClientInterface {
   }
   
   public void getKlantInfo() {
-    System.out.println(this.naam + " " + this.geboorteDatum + " " + this.straatNaam + " " + this.huisNummer);
+    System.out.println(this.naam + ", " + this.geboorteDatum + ", " + this.straatNaam + ", " + this.huisNummer);
   }
 }

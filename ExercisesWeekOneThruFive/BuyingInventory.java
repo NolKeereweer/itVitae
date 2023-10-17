@@ -10,7 +10,7 @@ class BuyingInventory {
   public static void main(String[] args) {
     
     // ArrayList to store items
-    ArrayList<String>items = new ArrayList<>(7);
+    ArrayList<String>items = new ArrayList<>();
     items.add("Rope");
     items.add("Torches");
     items.add("Climbing Equipment");
@@ -27,7 +27,7 @@ class BuyingInventory {
     }
     
     // ArrayList to store item prices
-    ArrayList<Double>prices = new ArrayList<>(7);
+    ArrayList<Double>prices = new ArrayList<>();
     prices.add(10.0);
     prices.add(15.0);
     prices.add(25.0);
@@ -37,7 +37,7 @@ class BuyingInventory {
     prices.add(1.0);
 
     // ArrayList to store discounted prices
-    ArrayList<Double>discountedPrices = new ArrayList<>(7);
+    ArrayList<Double>discountedPrices = new ArrayList<>();
     discountedPrices.add(5.0);
     discountedPrices.add(7.5);
     discountedPrices.add(12.5);
@@ -61,19 +61,14 @@ class BuyingInventory {
     do  {
       System.out.println("What item number do you want to see the price of? ");
       requestedItem = input.nextInt();
-      if (requestedItem > items.size() || requestedItem < 0) {
+      if (requestedItem > items.size() || requestedItem < 1) {
         System.out.println(ANSI_RED + "That isn't part of our inventory." + ANSI_RESET + " It's best you try again.\n" );
       }
-    } while (requestedItem > items.size() || requestedItem <= 0);
+    } while (requestedItem > items.size() || requestedItem < 1);
     
     String requestedItemName = items.get(requestedItem - 1); // String to determine which item to show
     
-    double requestedItemPrice;
-    if (!discount) { // if statement to determine which price to show
-      requestedItemPrice = prices.get(requestedItem - 1);
-    } else {
-      requestedItemPrice = discountedPrices.get(requestedItem - 1);
-    } 
+    double requestedItemPrice = discount ? discountedPrices.get(requestedItem - 1) : prices.get(requestedItem - 1);
     
     System.out.println(requestedItemName + " cost " + requestedItemPrice + " Gold.");
   }

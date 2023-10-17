@@ -7,7 +7,7 @@ class BankAccount implements BankAccountInterface {
   private ArrayList<BigDecimal> transactieLijst;
 
   public BankAccount() {
-    this.saldo = BigDecimal.valueOf(0.000001);
+    this.saldo = BigDecimal.valueOf(0.0);
     this.transactieLijst = new ArrayList<BigDecimal>(0);
   }
   
