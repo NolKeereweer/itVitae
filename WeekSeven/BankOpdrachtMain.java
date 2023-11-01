@@ -10,10 +10,10 @@ public class BankOpdrachtMain {
   
   public static void main(String[] args) {
     System.out.println("Welcome to the ITVitae student bank.\nRunning admin menu now.\n");
-    AdminMenu();
+    adminMenu();
   }
 
-  private static void AdminMenu() {
+  private static void adminMenu() {
     boolean runAdminMenu = true;
     do {
       System.out.println("Enter admin command number (For help enter 3): ");      
@@ -23,11 +23,11 @@ public class BankOpdrachtMain {
       switch (clientInput) {
         case 1: 
           System.out.println("Opening client menu for client number " + clientInput + "\n...\n...\n...");
-          ClientMenu(test);
+          clientMenu(test);
           break;
         case 2:
           System.out.println("Opening client menu for client number " + clientInput + "\n...\n...\n...");
-          ClientMenu(testTwo);
+          clientMenu(testTwo);
           break;
         case 3:
           System.out.print("""
@@ -51,7 +51,7 @@ public class BankOpdrachtMain {
     } while (runAdminMenu);
   }
 
-  public static void ClientMenu(Client current) {
+  public static void clientMenu(Client current) {
     boolean runClientMenu = true;
     while (runClientMenu) {
       System.out.print("""
