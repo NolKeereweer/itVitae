@@ -34,4 +34,32 @@ public class TextMethods {
   public static void whiteText() {
     System.out.print("\u001B[37m");
   }
+  
+  public static String redText(String text) {
+    return "\u001B[31m" + text + "\u001B[0m";
+  }
+  
+  public static String greenText(String text) {
+    return "\u001B[32m" + text + "\u001B[0m";
+  }
+  
+  public static String yellowText(String text) {
+    return "\u001B[33m" + text + "\u001B[0m";
+  }
+  
+  public static String blueText(String text) {
+    return "\u001B[34m" + text + "\u001B[0m";
+  }
+  
+  public static String purpleText(String text) {
+    return "\u001B[35m" + text + "\u001B[0m";
+  }
+  
+  public static String cyanText(String text) {
+    return "\u001B[36m" + text + "\u001B[0m";
+  }
+  
+  public static String whiteText(String text) {
+    return "\u001B[37m" + text + "\u001B[0m";
+  }
 }
