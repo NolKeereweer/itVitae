@@ -32,6 +32,27 @@ class VinFletchersArrows {
     float totalCost = headCost + fletchCost + shaftCost;
     return totalCost;
   }
+
+  static float getCost(Arrow arrow) {
+    float headCost = 0.0f;
+    float fletchCost = 0.0f;
+    float shaftCost = (float) shaftLength * 0.05f;
+    
+    if (HeadType == HeadType.WOOD) {
+      headCost = 3;
+    } else if (HeadType == HeadType.OBSIDIAN) {
+      headCost = 5;
+    } else {
+      headCost = 10;
+    }
+    
+    float totalCost = headCost + fletchCost + shaftCost;
+    return totalCost;
+  }
+  
+  Arrow eliteArrow = new Arrow(HeadType.STEEL, FletchType.PLASTIC, 95);
+  Arrow marksmanArrow = new Arrow(HeadType.STEEL, FletchType.GOOSE_FEATHERS, 65);
+  Arrow beginnerArrow = new Arrow(HeadType.WOOD, FletchType.GOOSE_FEATHERS, 75);
   
   private static HeadType currentHead = HeadType.WOOD;
   private static FletchType currentFletch = FletchType.GOOSE_FEATHERS;
@@ -43,9 +64,7 @@ class VinFletchersArrows {
   
   private static Scanner input = new Scanner(System.in);
   
-  public static void main(String[] args) {
-    System.out.println(TextMethods.cyanText("Welcome to Vin Fletcher's arrow shop deluxe!\n"));
-    
+  private static void customArrowMenu() {
     System.out.println(TextMethods.yellowText("Let's build you an arrow :)"));
     System.out.println("Choose a head type: ");
     System.out.println("1. Wood - 3 gold pieces.\n2. Obsidian - 5 gold pieces.\n3. Steel - 10 gold pieces.");
@@ -136,5 +155,33 @@ class VinFletchersArrows {
     
     System.out.println("The total cost of your arrow is " + getCost(headCost, fletchCost, shaftChoice) + " gold pieces");
     System.out.println(TextMethods.cyanText("Your arrow has a " + headString + " head with " + fletchString + " fletching. And it's " + shaftChoice + " centimeters long."));
+  }
+  
+  public static void main(String[] args) {
+    System.out.println(TextMethods.cyanText("Welcome to Vin Fletcher's arrow shop deluxe!\n"));
+    
+    System.out.println("What kind of arrow would you like?");
+    boolean validInput = false;
+    int menuChoice = 0;
+    
+    do {
+      System.out.println("1. Beginner arrow.\n2. Marksman arrow.\n3. Elite arrow.\n4. Custom arrow");
+      menuChoice = input.nextInt();
+      switch(menuChoice) {
+        case 1:
+          
+        case 2:
+        
+        case 3:
+        
+        case 4:
+          customArrowMenu();
+          validInput = true;
+          break;
+          
+        default:
+          break;
+      }
+    } while (!validInput);
   }
 }

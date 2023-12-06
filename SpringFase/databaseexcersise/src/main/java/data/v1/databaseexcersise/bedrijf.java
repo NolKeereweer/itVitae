@@ -2,6 +2,8 @@ package data.v1.databaseexcersise;
 
 
 import jakarta.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "bedrijf")
@@ -9,15 +11,22 @@ public class bedrijf {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
-  private String naam;
+  private String name;
   private Integer aantalWerknemers;
 
-  public String getNaam() {
-    return naam;
+  @ManyToOne
+  @JoinColumn(name="eigenaar_id", nullable = false)
+  private Eigenaar eigenaar;
+
+  @ManyToMany(mappedBy = "bedrijven")
+  private Set<Land> landen = new HashSet<>();
+
+  public String getName() {
+    return name;
   }
 
-  public void setNaam(String naam) {
-    this.naam = naam;
+  public void setName(String name) {
+    this.name = name;
   }
 
   public Integer getAantalWerknemers() {
@@ -28,9 +37,22 @@ public class bedrijf {
     this.aantalWerknemers = aantalWerknemers;
   }
 
-  public bedrijf(String naam, Integer aantalWerknemers) {
-    setNaam(naam);
+  public bedrijf(String name, Integer aantalWerknemers) {
+    setName(name);
     setAantalWerknemers(aantalWerknemers);
+  }
+
+  public void setEigenaar(Eigenaar eigenaar) {
+    this.eigenaar = eigenaar;
+  }
+
+  public Set<Land> getLanden() {
+    return this.landen;
+  }
+
+  public void addLand(Land land) {
+    this.landen.add(land);
+    land.getBedrijven().add(this);
   }
 
   public bedrijf(){}
