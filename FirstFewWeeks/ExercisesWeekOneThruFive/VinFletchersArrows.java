@@ -36,11 +36,11 @@ class VinFletchersArrows {
   static float getCost(Arrow arrow) {
     float headCost = 0.0f;
     float fletchCost = 0.0f;
-    float shaftCost = (float) shaftLength * 0.05f;
+    float shaftCost = (float) arrow.shaftLength * 0.05f;
     
-    if (HeadType == HeadType.WOOD) {
+    if (arrow.headType == HeadType.WOOD) {
       headCost = 3;
-    } else if (HeadType == HeadType.OBSIDIAN) {
+    } else if (arrow.headType == HeadType.OBSIDIAN) {
       headCost = 5;
     } else {
       headCost = 10;
@@ -50,9 +50,9 @@ class VinFletchersArrows {
     return totalCost;
   }
   
-  Arrow eliteArrow = new Arrow(HeadType.STEEL, FletchType.PLASTIC, 95);
-  Arrow marksmanArrow = new Arrow(HeadType.STEEL, FletchType.GOOSE_FEATHERS, 65);
-  Arrow beginnerArrow = new Arrow(HeadType.WOOD, FletchType.GOOSE_FEATHERS, 75);
+  private static Arrow eliteArrow = new Arrow(HeadType.STEEL, FletchType.PLASTIC, 95);
+  private static Arrow marksmanArrow = new Arrow(HeadType.STEEL, FletchType.GOOSE_FEATHERS, 65);
+  private static Arrow beginnerArrow = new Arrow(HeadType.WOOD, FletchType.GOOSE_FEATHERS, 75);
   
   private static HeadType currentHead = HeadType.WOOD;
   private static FletchType currentFletch = FletchType.GOOSE_FEATHERS;
@@ -63,6 +63,11 @@ class VinFletchersArrows {
   private static String fletchString = "";
   
   private static Scanner input = new Scanner(System.in);
+
+  private static void factoryArrowResonse(Arrow factoryArrow) {
+    System.out.println("That arrow is gonna set you back " + getCost(factoryArrow) + " gold pieces.\n" + 
+      TextMethods.cyanText("Pleasure doing business. Come again!"));
+  }
   
   private static void customArrowMenu() {
     System.out.println(TextMethods.yellowText("Let's build you an arrow :)"));
@@ -161,7 +166,7 @@ class VinFletchersArrows {
     System.out.println(TextMethods.cyanText("Welcome to Vin Fletcher's arrow shop deluxe!\n"));
     
     System.out.println("What kind of arrow would you like?");
-    boolean validInput = false;
+    boolean transactionCompleted = false;
     int menuChoice = 0;
     
     do {
@@ -169,19 +174,25 @@ class VinFletchersArrows {
       menuChoice = input.nextInt();
       switch(menuChoice) {
         case 1:
-          
+          factoryArrowResonse(beginnerArrow);
+          transactionCompleted = true;
+          break;
         case 2:
-        
+          factoryArrowResonse(marksmanArrow);
+          transactionCompleted = true;
+          break;
         case 3:
-        
+          factoryArrowResonse(eliteArrow);
+          transactionCompleted = true;
+          break;
         case 4:
           customArrowMenu();
-          validInput = true;
+          transactionCompleted = true;
           break;
           
         default:
           break;
       }
-    } while (!validInput);
+    } while (!transactionCompleted);
   }
 }
