@@ -40,6 +40,14 @@ public class Arrow {
       headCost = 10;
     }
 
+    if (getFletchType() == fletchType.GOOSE_FEATHERS) {
+      fletchCost = 3;
+    } else if (getFletchType() == fletchType.TURKEY_FEATHERS) {
+      fletchCost = 5;
+    } else {
+      fletchCost = 10;
+    }
+
     float totalCost = headCost + fletchCost + shaftCost;
     return totalCost;
   }
