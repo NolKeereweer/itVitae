@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import ExercisesWeekOneThruFive.TextMethods;
 
 class SimulasSoup {
 

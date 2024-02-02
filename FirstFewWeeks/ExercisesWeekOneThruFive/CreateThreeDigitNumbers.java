@@ -1,3 +1,5 @@
+import ExercisesWeekOneThruFive.TextMethods;
+
 class CreateThreeDigitNumbers {
   public static void main(String[] args) {
     int uniqueNumbers = 0;

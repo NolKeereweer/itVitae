@@ -1,6 +1,7 @@
 import java.util.Scanner;
+import ExercisesWeekOneThruFive.TextMethods;
 
-class ThePrototype extends TextMethods {
+class ThePrototype {
   public static void main(String[] args) {
     Scanner userInput = new Scanner(System.in);
     TextMethods.greenText();

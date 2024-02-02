@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import ExercisesWeekOneThruFive.TextMethods;
 
 class TakingANumber {
   private static Scanner input = new Scanner(System.in);

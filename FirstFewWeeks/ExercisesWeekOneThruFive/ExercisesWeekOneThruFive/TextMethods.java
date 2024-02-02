@@ -1,3 +1,5 @@
+package ExercisesWeekOneThruFive;
+
 public class TextMethods {
   public static void clearScreen() {
     System.out.print("\033[H\033[2J");
