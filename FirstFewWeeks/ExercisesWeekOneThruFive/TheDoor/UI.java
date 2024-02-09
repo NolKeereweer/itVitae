@@ -7,75 +7,57 @@ public class UI {
 
   public static Scanner input = new Scanner(System.in);
 
-  public static void unlockLogic(Door door) {
-    System.out.println("Enter passcode: ");
-    int inpPasscode = input.nextInt();
-
-    if (inpPasscode != door.getPassCode()) {
-      System.out.println("Wrong code. Action failed.");
-    } else {
-      System.out.println("Door is now unlocked.");
-      door.doorState = DoorState.CLOSED;
-    }
-  }
-
-  public static void lockLogic(Door door) {
-    System.out.println("Enter passcode: ");
-    int inpPasscode = input.nextInt();
-
-    if (inpPasscode != door.getPassCode()) {
-      System.out.println("Wrong code. Action failed.");
-    } else {
-      System.out.println("Door is now locked.");
-      door.doorState = DoorState.LOCKED;
-    }
-  }
-
   public static void stateMenu(Door door) {
-    System.out.println("The door is now " + door.getDoorState() + ".");
-    System.out.println("What do you want to do with the door?");
-    System.out.println("1. Open the door.\n2. Close the door.\n3. Unlock the door.\n4. Lock the door.\n5. Quit.");
-    int menuChoice = input.nextInt();
     boolean quitMenu = false;
-
+    System.out.println("The door is now " + door.getDoorState() + ".");
     do {
+
+      System.out.println("What do you want to do with the door?");
+      System.out.println("1. Open the door.\n2. Close the door.\n3. Unlock the door.\n4. Lock the door.\n5. Quit.");
+      int menuChoice = input.nextInt();
+
+
       switch (menuChoice) {
         case 1:
-          if (door.getDoorState().equals("open")) {
-            System.out.println(TextMethods.redText("Door is already open."));
-          } else if (door.getDoorState().equals("closed")) {
-            System.out.println("Door is now open.");
-            door.doorState = DoorState.OPEN;
-          } else if (door.getDoorState().equals("locked")) {
-            System.out.println("Cannot open, door is locked.");
+          try {
+            door.open();
+            System.out.println(TextMethods.greenText("Door opened successfully."));
+          } catch(DoorStateException e) {
+            System.out.println(TextMethods.redText(e.getMessage()));
           }
           break;
         case 2:
-          if (door.getDoorState().equals("open")) {
-            System.out.println("Door is now closed.");
-            door.doorState = DoorState.CLOSED;
-          } else if (door.getDoorState().equals("closed")) {
-            System.out.println("Door is already closed.");
-          } else if (door.getDoorState().equals("locked")) {
-            System.out.println("Door is locked and therefore already closed.");
+          try {
+            door.close();
+            System.out.println(TextMethods.greenText("Door closed successfully."));
+          } catch (DoorStateException e) {
+            System.out.println(TextMethods.redText(e.getMessage()));
           }
           break;
         case 3:
-          if (door.getDoorState().equals("open")) {
-            System.out.println("Door is already open.");
-          } else if (door.getDoorState().equals("closed")) {
-            System.out.println("Door is already unlocked.");
-          } else if (door.getDoorState().equals("locked")) {
-            unlockLogic(door);
+          System.out.println("Enter passcode:");
+          int unlockPasscode = input.nextInt();
+
+          try {
+            door.unlock(unlockPasscode);
+            System.out.println(TextMethods.greenText("Door unlocked successfully."));
+          } catch (DoorStateException e) {
+            System.out.println(TextMethods.redText(e.getMessage()));
+          } catch (PassCodeException e) {
+            System.out.println(TextMethods.redText(e.getMessage()));
           }
           break;
         case 4:
-          if (door.getDoorState().equals("open")) {
-            System.out.println("Door needs to be closed before you can lock it.");
-          } else if (door.getDoorState().equals("closed")) {
-            lockLogic(door);
-          } else if (door.getDoorState().equals("locked")) {
-            System.out.println("Door is already locked.");
+          System.out.println("Enter passcode:");
+          int lockPasscode = input.nextInt();
+
+          try {
+            door.lock(lockPasscode);
+            System.out.println(TextMethods.greenText("Door locked successfully."));
+          } catch (DoorStateException e) {
+            System.out.println(TextMethods.redText(e.getMessage()));
+          } catch (PassCodeException e) {
+            System.out.println(TextMethods.redText(e.getMessage()));
           }
           break;
         case 5:
@@ -95,7 +77,12 @@ public class UI {
     System.out.print("Now enter the new code: ");
     int newCode = input.nextInt();
 
-    door.changeCode(oldCode, newCode);
+    try {
+      door.changeCode(oldCode, newCode);
+      System.out.println("Code successfully changed.");
+    } catch (PassCodeException e) {
+      System.out.println(e.getMessage());
+    }
   }
 
   public static void main(String[] args) {
