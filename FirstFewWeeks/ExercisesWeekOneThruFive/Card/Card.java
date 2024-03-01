@@ -1,3 +1,7 @@
+package Card;
+
+import static ExercisesWeekOneThruFive.TextMethods.capitalise;
+
 public class Card {
 
   private CardColor color;
@@ -33,7 +37,7 @@ public class Card {
   }
 
   public String toString() {
-    return "The " + color + " " + rank + " ";
+    return "The " + capitalise(color.toString().toLowerCase()) + " " + capitalise(rank.toString().toLowerCase()) + " ";
   }
 
   private static void cardChecker(Card card) {
@@ -72,7 +76,7 @@ public class Card {
   public static void main(String[] args) {
     for (CardColor color : CardColor.values()) {
       for (CardRank rank : CardRank.values()) {        
-        System.out.print(new Card(color, rank).toString().toLowerCase());
+        System.out.print(new Card(color, rank));
         cardChecker(new Card(color, rank));
       }
     }

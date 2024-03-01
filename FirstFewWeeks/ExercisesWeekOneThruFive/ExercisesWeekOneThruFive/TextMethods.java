@@ -64,4 +64,6 @@ public class TextMethods {
   public static String whiteText(String text) {
     return "\u001B[37m" + text + "\u001B[0m";
   }
+
+  public static String capitalise(String text) {return text.substring(0,1).toUpperCase() + text.substring(1);}
 }
