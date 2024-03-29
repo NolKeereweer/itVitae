@@ -12,6 +12,11 @@ public class Card {
     GREEN,
     BLUE,
     YELLOW;
+
+    @Override
+    public String toString() {
+      return capitalise(super.toString().toLowerCase());
+    }
   }
 
   enum CardRank{
@@ -29,6 +34,11 @@ public class Card {
     PERCENT,
     CARET,
     AMPERSAND;
+
+    @Override
+    public String toString() {
+      return capitalise(super.toString().toLowerCase());
+    }
   }
 
   private Card(CardColor color, CardRank rank) {
@@ -37,33 +47,10 @@ public class Card {
   }
 
   public String toString() {
-    return "The " + capitalise(color.toString().toLowerCase()) + " " + capitalise(rank.toString().toLowerCase()) + " ";
+    return "The " + color + " " + rank + " ";
   }
 
   private static void cardChecker(Card card) {
-//    switch(card.rank) {
-//      case ONE: 
-//      case TWO:
-//      case THREE:
-//      case FOUR:
-//      case FIVE:
-//      case SIX:
-//      case SEVEN:
-//      case EIGHT:
-//      case NINE:
-//      case TEN:
-//        System.out.println("is a number card.\n");
-//        break;
-//      case DOLLAR:
-//      case PERCENT:
-//      case CARET:
-//      case AMPERSAND:
-//        System.out.println("is a face card.\n");
-//        break;
-//      default:
-//        System.out.println("is not a viable card");
-//        break;
-//    }
 
     if (card.rank == CardRank.DOLLAR || card.rank == CardRank.PERCENT 
           || card.rank == CardRank.CARET || card.rank == CardRank.AMPERSAND) {
