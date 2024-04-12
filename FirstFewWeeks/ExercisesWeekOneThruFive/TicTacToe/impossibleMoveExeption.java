@@ -1,5 +1,5 @@
 package TicTacToe;
 
-public class impossibleMoveExeption extends Exception {
+class impossibleMoveException extends Exception {
 
 }
